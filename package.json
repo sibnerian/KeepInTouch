@@ -1,0 +1,41 @@
+{
+  "name": "keep-in-touch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
+    "gulp": "^3.9.1",
+    "gulp-concat-sourcemap": "^1.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "lodash.assign": "^4.0.9",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "stringify"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "stringify": {
+    "minify": true
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.7.0",
+    "jquery": "^3.0.0"
+  }
+}

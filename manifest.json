@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+
+    "name": "Keep In Touch",
+    "description": "Schedule reminders to get back in touch with your friends on Facebook or LinkedIn.",
+
+    "version": "1.0",
+
+    "content_scripts": [
+        {
+            "matches": ["*://www.facebook.com/*"],
+            "css": ["content_scripts/css/facebook.css"],
+            "js": ["build/libs.js", "build/facebook.bundle.js"] 
+        }
+    ],
+
+    "page_action": {
+        "default_popup": "popup/popup.html",
+        "default_icon":  "popup/icon.png",
+        "default_title": "IAmA Parser"
+    },
+
+    "permissions": [
+        "activeTab",
+        "declarativeContent"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
