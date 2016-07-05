@@ -1,9 +1,10 @@
 <div class="reminders">
-  <div class="note-heading">
+  <h2 class="reminders-heading">Reminders {{> add-button}}</h2>
+  <ul class="reminders-list">
     {{#each reminders}}
-    <div class="reminder">
+    <li class="reminder">
       {{content}} -- {{date}}
-    </div>
+    </li>
     {{/each}}
-  </div>
+  </ul>
 </div>

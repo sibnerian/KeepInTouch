@@ -1,20 +1,33 @@
 /* eslint-env node */
 
-var watchify = require('watchify');
-var browserify = require('browserify');
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var sourcemaps = require('gulp-sourcemaps');
 var assign = require('lodash.assign');
+var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
 var concat = require('gulp-concat-sourcemap');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var sass = require('gulp-sass');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var watchify = require('watchify');
 
 // libs
 gulp.task('libs', function () {
   gulp.src(['node_modules/jquery/dist/jquery.min.js'])
      .pipe(concat('libs.js'))
      .pipe(gulp.dest('./build/'));
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./content_scripts/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./build'));
+});
+ 
+gulp.task('sass:watch', function () {
+  gulp.watch('./content_scripts/**/*.scss', ['sass']);
 });
 
 // See http://stackoverflow.com/questions/23835898/how-to-output-multiple-bundles-with-browserify-and-gulp
@@ -31,8 +44,9 @@ var w = watchify(browserify(opts));
 // i.e. b.transform(coffeeify);
 
 gulp.task('js', ['libs'], bundle('facebook', browserify(opts))); // so you can run `gulp js` to build the file
+gulp.task('js:watch', ['libs'], bundle('facebook', w));
 
-gulp.task('watch', ['libs'], bundle('facebook', w)); // so you can run 'gulp watch' to dev
+gulp.task('watch', ['sass:watch', 'js:watch']); // so you can run 'gulp watch' to dev
 w.on('update', bundle('facebook', w)); // on any dep update, runs the bundler
 w.on('log', gutil.log); // output build logs to terminal
 

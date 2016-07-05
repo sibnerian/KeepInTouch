@@ -4,7 +4,9 @@ let embedTemplate = Handlebars.compile(require('../templates/embed.hbs'));
 
 let sampleData = {
   notes: [
-    {content: 'This guy is awesome, one of my favorites.'},
+    {content: 'Donald Trump has small hands'},
+    {content: 'This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites. This guy is awesome, one of my favorites.'},
+    {content: 'Donald Trump has small hands'},
     {content: 'Donald Trump has small hands'}
   ],
   reminders: [
@@ -15,15 +17,20 @@ let sampleData = {
 $(function () {
   var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
+  var currentProfileId;
   var embedHTML = function () {
     var isProfilePage = $('#fb-timeline-cover-name').length > 0;
     if (isProfilePage) {
       var name = $('#fb-timeline-cover-name').text();
       var id = $('a > #fb-timeline-cover-name').parent().attr('href').split('facebook.com/').pop();
-      // console.log('Name: ' + name + ', id: ' + id);
-      $('#keep-in-touch-embed').remove();
-      $('#timeline_tab_content').prepend(embedTemplate(sampleData)); 
+      if (currentProfileId !== id) {
+        currentProfileId = id;
+        // console.log('Name: ' + name + ', id: ' + id);
+        $('#keep-in-touch-embed').remove();
+        $('#timeline_tab_content').prepend(embedTemplate(sampleData)); 
+      }
     } else {
+      currentProfileId = null;
       console.log('Not a profile page');
     }
   };

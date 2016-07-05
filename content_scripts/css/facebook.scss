@@ -1,0 +1,46 @@
+#keep-in-touch-embed {
+  background-color: #FFF;
+  margin-top: 17px;
+  margin-bottom: 0px;
+  padding: 12px;
+  
+  h2 {
+    color: rgb(75, 79, 86);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    font-weight: normal;
+  }
+
+  $bulletSize: 1.5em;
+  ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+      padding-left: $bulletSize + 0.5em;
+      position: relative;
+      margin: 5px auto;
+      min-height: $bulletSize;
+    }
+    li:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-size: $bulletSize;
+      width: $bulletSize;
+      height: $bulletSize;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      // http://stackoverflow.com/questions/10768451/inline-svg-in-css
+    }
+    li.reminder:before{
+            background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwLjc1Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTtzdHJva2U6JTIzMDEwMTAxO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDoycHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5ub3VuXzM4MTQ3X2NjX2Nyb3BwZWQ8L3RpdGxlPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjUwLjE4IiB5MT0iOS4xNSIgeDI9IjUwLjE4IiB5Mj0iMTUuNzUiLz48cmVjdCB4PSI4NC4xOCIgeT0iNDcuMDgiIHdpZHRoPSI2LjYiIGhlaWdodD0iMi4yIi8+PHJlY3QgeD0iNzcuNTgiIHk9IjI4LjU0IiB3aWR0aD0iNi42IiBoZWlnaHQ9IjIuMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMuOTggNDQuNDEpIHJvdGF0ZSgtMzApIi8+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iNy42OSIgeTE9IjQ4LjE4IiB4Mj0iMTQuMjkiIHkyPSI0OC4xOCIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjUwLjE4IiB5MT0iODQuNjQiIHgyPSI1MC4xOCIgeTI9IjkxLjIzIi8+PHJlY3QgeD0iNjguMDUiIHk9Ijc5LjY4IiB3aWR0aD0iMi4yIiBoZWlnaHQ9IjYuNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMyLjIzIDQ1LjcxKSByb3RhdGUoLTMwLjAxKSIvPjxyZWN0IHg9IjgxLjk0IiB5PSI2NC45NyIgd2lkdGg9IjIuMiIgaGVpZ2h0PSI2LjYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNy42IDEwNi4wNykgcm90YXRlKC02MC4wMSkiLz48cmVjdCB4PSI0OC45MiIgeT0iOS4xNSIgd2lkdGg9IjIuMiIgaGVpZ2h0PSI2LjYiLz48cmVjdCB4PSI5LjQxIiB5PSI0Ny4wOCIgd2lkdGg9IjYuNiIgaGVpZ2h0PSIyLjIiLz48cmVjdCB4PSIxOC4yMSIgeT0iMjYuMzMiIHdpZHRoPSIyLjIiIGhlaWdodD0iNi42IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTYuMDEgMzEuNTQpIHJvdGF0ZSgtNjApIi8+PHJlY3QgeD0iMzEuNTkiIHk9IjE0LjEiIHdpZHRoPSIyLjIiIGhlaWdodD0iNi42IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNC4zMiAxOC42Nikgcm90YXRlKC0yOS45OCkiLz48cmVjdCB4PSI0OC45MiIgeT0iODQuNjQiIHdpZHRoPSIyLjIiIGhlaWdodD0iNi42Ii8+PHJlY3QgeD0iMjcuNzQiIHk9IjgxLjg4IiB3aWR0aD0iNi42IiBoZWlnaHQ9IjIuMiIgdHJhbnNmb3JtPSJtYXRyaXgoMC41LCAtMC44NywgMC44NywgMC41LCAtNTYuMzQsIDY4LjM1KSIvPjxyZWN0IHg9IjEzLjg1IiB5PSI2Ny4xNyIgd2lkdGg9IjYuNiIgaGVpZ2h0PSIyLjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMS44MiAxNy43MSkgcm90YXRlKC0yOS45OCkiLz48cGF0aCBkPSJNODUuMjEsMTUuOTFsNS4yNS01LjI0TDc1LjM0LDguODksNzcuMTIsMjRsNS01YTQ1LjA2LDQ1LjA2LDAsMSwxLTMyLjU5LTE0SDUwVjAuNjdINDkuNUE0OS41NSw0OS41NSwwLDEsMCw4NS4yMSwxNS45MVoiLz48cGF0aCBkPSJNNjQuNjgsMzMuMUM1OS4yLDMwLjU3LDUyLDMzLDQ5LjUsMzguNDIsNDcsMzMsMzkuOCwzMC41NiwzNC4zMiwzMy4xYy01LjgzLDIuNzEtOC42Miw5LjYyLTQsMTcuNzcsMy4yNyw1LjgsOS4wNywxMC4xNywxOS4xOSwxOCwxMC4xMi03Ljg0LDE1LjkyLTEyLjIyLDE5LjE5LTE4QzczLjMsNDIuNzIsNzAuNTEsMzUuODEsNjQuNjgsMzMuMVoiLz48L3N2Zz4=");
+
+    }
+    li.note:before{
+      background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDc3LjA2Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2NsaXAtcGF0aDp1cmwoJTIzY2xpcC1wYXRoKTt9LmNscy0ze2ZpbGw6JTIzMDEwMTAxO308L3N0eWxlPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj48cmVjdCBjbGFzcz0iY2xzLTEiIHk9Ii0wLjM0IiB3aWR0aD0iMTAwIiBoZWlnaHQ9Ijk3Ii8+PC9jbGlwUGF0aD48L2RlZnM+PHRpdGxlPm5vdW5fMTgwMjdfY2NfY3JvcHBlZDwvdGl0bGU+PGcgY2xhc3M9ImNscy0yIj48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik04Ni40Myw2MC43MUgyOC4zNEMxOC4yNiw0OC4xMSwxNi42NSwxNS4zMiwxNi40LDUuNTZIODFDODEuMiwxNC45LDgyLjYxLDQ1LDkxLjgxLDYwLjcxSDg2LjQzWk04MC41Niw3MS41MUg5LjQ4bDUuMjQtNS4yNEg4MC41NnY1LjI0aDBabS03NS01Ni43OSw1LjI0LTUuMjRWNjIuMzRMNS41Niw2Ny41OFYxNC43MlptMTAuNzksMzIuOWE1Ny41LDU3LjUsMCwwLDAsNS4zMywxMy4xSDE2LjM1VjQ3LjYyWm04Mi45MywxNEM4Ni42Niw0Ny43NSw4Ni41MSwzLjIzLDg2LjUxLDIuNzhBMi43OCwyLjc4LDAsMCwwLDgzLjczLDBIMTMuNTdhMi43NywyLjc3LDAsMCwwLTEuODUuNzFoMGwtMC4xMS4xMUwwLjgxLDExLjYxYTIuNzgsMi43OCwwLDAsMC0uODEsMlY3NC4zMkgwYTIuNzgsMi43OCwwLDAsMCwyLjc4LDIuNzNIODMuMzNhMi43OCwyLjc4LDAsMCwwLDIuNzgtMi43OHYtOEg5Ny4yMkEyLjc4LDIuNzgsMCwwLDAsOTkuMjgsNjEuNjJaIi8+PC9nPjwvc3ZnPg==");
+    }
+  }
+}
